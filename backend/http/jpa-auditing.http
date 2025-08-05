@@ -1,0 +1,10 @@
+### Register User
+POST http://localhost:8080/api/v1/auth/register
+Content-Type: application/json
+
+{
+  "username": "Nderitu",
+  "email":  "Nderitu@mail.com",
+  "password": "password",
+  "role":  "ADMIN"
+},

@@ -1,0 +1,82 @@
+{
+  "users": [
+    {
+      "username": "admin",
+      "email": "admin@mail.com",
+      "password": "password",
+      "role": "ADMIN"
+    },
+    {
+      "username": "developer",
+      "email": "developer@mail.com",
+      "password": "password",
+      "role": "USER"
+    }
+  ],
+  "tasks": [
+    {
+      "title": "Implement User Authentication System",
+      "description": "Create a secure JWT-based authentication system with refresh tokens, password hashing, and role-based access control",
+      "status": "IN_PROGRESS",
+      "priority": "HIGH",
+      "assigneeEmail": "developer@mail.com",
+      "creatorEmail": "admin@mail.com"
+    },
+    {
+      "title": "Design Database Schema",
+      "description": "Design and implement the database schema for the task management system with proper relationships and indexes",
+      "status": "TODO",
+      "priority": "MEDIUM",
+      "assigneeEmail": "developer@mail.com",
+      "creatorEmail": "admin@mail.com"
+    },
+    {
+      "title": "Setup Development Environment",
+      "description": "Configure IDE, install dependencies, setup Git repository, and create initial project structure",
+      "status": "DONE",
+      "priority": "LOW",
+      "assigneeEmail": "developer@mail.com",
+      "creatorEmail": "admin@mail.com"
+    },
+    {
+      "title": "Fix Critical Security Vulnerability",
+      "description": "Address SQL injection vulnerability in user input validation and implement proper input sanitization",
+      "status": "TODO",
+      "priority": "URGENT",
+      "assigneeEmail": "admin@mail.com",
+      "creatorEmail": "admin@mail.com"
+    },
+    {
+      "title": "Build RESTful API Endpoints",
+      "description": "Create comprehensive REST API endpoints for task management with proper error handling and validation",
+      "status": "IN_PROGRESS",
+      "priority": "HIGH",
+      "assigneeEmail": "developer@mail.com",
+      "creatorEmail": "admin@mail.com"
+    },
+    {
+      "title": "Implement Task Filtering and Search",
+      "description": "Add advanced filtering capabilities by status, priority, assignee, and date ranges with search functionality",
+      "status": "TODO",
+      "priority": "MEDIUM",
+      "assigneeEmail": "developer@mail.com",
+      "creatorEmail": "admin@mail.com"
+    },
+    {
+      "title": "Write API Documentation",
+      "description": "Create comprehensive API documentation using Swagger/OpenAPI with examples and response schemas",
+      "status": "DONE",
+      "priority": "LOW",
+      "assigneeEmail": "admin@mail.com",
+      "creatorEmail": "admin@mail.com"
+    },
+    {
+      "title": "Add Real-time Notifications",
+      "description": "Implement WebSocket-based real-time notifications for task updates, assignments, and status changes",
+      "status": "TODO",
+      "priority": "LOW",
+      "assigneeEmail": "developer@mail.com",
+      "creatorEmail": "admin@mail.com"
+    }
+  ]
+} 
