@@ -77,7 +77,7 @@ This project consists of two main components:
 
 ### Prerequisites
 - JDK 17+
-- Node.js 18+
+- Node.js 20.19.0+
 - Maven 3+
 
 ### Backend Setup
