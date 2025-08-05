@@ -15,11 +15,6 @@ import org.springframework.security.web.authentication.logout.LogoutHandler;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
-
-import static com.nderitu.tma.user.Permission.*;
-import static com.nderitu.tma.user.Role.ADMIN;
-import static com.nderitu.tma.user.Role.USER;
-import static org.springframework.http.HttpMethod.*;
 import static org.springframework.security.config.http.SessionCreationPolicy.STATELESS;
 import java.util.Arrays;
 
@@ -30,7 +25,7 @@ import java.util.Arrays;
 public class SecurityConfiguration {
 
     private static final String[] WHITE_LIST_URL = {
-            "/api/v1/auth/**",
+            "/api/auth/**",
             "/v2/api-docs",
             "/v3/api-docs",
             "/v3/api-docs/**",
@@ -54,7 +49,7 @@ public class SecurityConfiguration {
             .csrf(AbstractHttpConfigurer::disable)
             .authorizeHttpRequests(req -> req
                 .requestMatchers(WHITE_LIST_URL).permitAll()
-                .requestMatchers("/api/v1/tasks/**").authenticated()
+                .requestMatchers("/api/tasks/**").authenticated()
                 .anyRequest().authenticated()
             )
             .headers(headers -> headers.frameOptions().disable()) // 👈 allow H2 console frames
@@ -62,7 +57,7 @@ public class SecurityConfiguration {
             .authenticationProvider(authenticationProvider)
             .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)
             .logout(logout -> logout
-                .logoutUrl("/api/v1/auth/logout")
+                .logoutUrl("/api/auth/logout")
                 .addLogoutHandler(logoutHandler)
                 .logoutSuccessHandler((request, response, authentication) -> SecurityContextHolder.clearContext())
             );

@@ -1,7 +1,7 @@
 ### Task Management API Tests
 
 ### 1. Register a new user
-POST http://localhost:8080/api/v1/auth/register
+POST http://localhost:8080/api/auth/register
 Content-Type: application/json
 
 {
@@ -12,7 +12,7 @@ Content-Type: application/json
 }
 
 ### 2. Login to get JWT token
-POST http://localhost:8080/api/v1/auth/authenticate
+POST http://localhost:8080/api/auth/authenticate
 Content-Type: application/json
 
 {
@@ -21,7 +21,7 @@ Content-Type: application/json
 }
 
 ### 3. Create a new task
-POST http://localhost:8080/api/v1/tasks
+POST http://localhost:8080/api/tasks
 Content-Type: application/json
 Authorization: Bearer {{auth_token}}
 
@@ -34,7 +34,7 @@ Authorization: Bearer {{auth_token}}
 }
 
 ### 4. Create another task
-POST http://localhost:8080/api/v1/tasks
+POST http://localhost:8080/api/tasks
 Content-Type: application/json
 Authorization: Bearer {{auth_token}}
 
@@ -47,23 +47,23 @@ Authorization: Bearer {{auth_token}}
 }
 
 ### 5. Get all tasks
-GET http://localhost:8080/api/v1/tasks
+GET http://localhost:8080/api/tasks
 Authorization: Bearer {{auth_token}}
 
 ### 6. Get tasks with pagination
-GET http://localhost:8080/api/v1/tasks?page=0&size=10
+GET http://localhost:8080/api/tasks?page=0&size=10
 Authorization: Bearer {{auth_token}}
 
 ### 7. Get tasks by status
-GET http://localhost:8080/api/v1/tasks?status=TODO
+GET http://localhost:8080/api/tasks?status=TODO
 Authorization: Bearer {{auth_token}}
 
 ### 8. Get a specific task
-GET http://localhost:8080/api/v1/tasks/1
+GET http://localhost:8080/api/tasks/1
 Authorization: Bearer {{auth_token}}
 
 ### 9. Update a task
-PUT http://localhost:8080/api/v1/tasks/1
+PUT http://localhost:8080/api/tasks/1
 Content-Type: application/json
 Authorization: Bearer {{auth_token}}
 
@@ -76,23 +76,23 @@ Authorization: Bearer {{auth_token}}
 }
 
 ### 10. Update task status
-PUT http://localhost:8080/api/v1/tasks/1/status?status=DONE
+PUT http://localhost:8080/api/tasks/1/status?status=DONE
 Authorization: Bearer {{auth_token}}
 
 ### 11. Get my tasks (tasks assigned to me)
-GET http://localhost:8080/api/v1/tasks/my-tasks
+GET http://localhost:8080/api/tasks/my-tasks
 Authorization: Bearer {{auth_token}}
 
 ### 12. Get tasks created by me
-GET http://localhost:8080/api/v1/tasks/created-by-me
+GET http://localhost:8080/api/tasks/created-by-me
 Authorization: Bearer {{auth_token}}
 
 ### 13. Get tasks by status
-GET http://localhost:8080/api/v1/tasks/status/DONE
+GET http://localhost:8080/api/tasks/status/DONE
 Authorization: Bearer {{auth_token}}
 
 ### 14. Register another user for assignment testing
-POST http://localhost:8080/api/v1/auth/register
+POST http://localhost:8080/api/auth/register
 Content-Type: application/json
 
 {
@@ -103,7 +103,7 @@ Content-Type: application/json
 }
 
 ### 15. Login as Jane
-POST http://localhost:8080/api/v1/auth/authenticate
+POST http://localhost:8080/api/auth/authenticate
 Content-Type: application/json
 
 {
@@ -112,11 +112,11 @@ Content-Type: application/json
 }
 
 ### 16. Assign a task to Jane (use John's token)
-POST http://localhost:8080/api/v1/tasks/2/assign?assigneeId=2
+POST http://localhost:8080/api/tasks/2/assign?assigneeId=2
 Authorization: Bearer {{auth_token}}
 
 ### 17. Login as Jane and check her tasks
-POST http://localhost:8080/api/v1/auth/authenticate
+POST http://localhost:8080/api/auth/authenticate
 Content-Type: application/json
 
 {
@@ -125,15 +125,15 @@ Content-Type: application/json
 }
 
 ### 18. Get Jane's assigned tasks
-GET http://localhost:8080/api/v1/tasks/my-tasks
+GET http://localhost:8080/api/tasks/my-tasks
 Authorization: Bearer {{jane_token}}
 
 ### 19. Delete a task (only creator can delete)
-DELETE http://localhost:8080/api/v1/tasks/1
+DELETE http://localhost:8080/api/tasks/1
 Authorization: Bearer {{auth_token}}
 
 ### 20. Get all users (for task assignment)
-GET http://localhost:8080/api/v1/users
+GET http://localhost:8080/api/users
 Authorization: Bearer {{auth_token}}
 
 ### Variables for testing

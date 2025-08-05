@@ -42,7 +42,7 @@ Task: id, title, description, status, priority, assigneeId, creatorId, createdAt
 
 #### Register User
 ```
-POST /api/v1/auth/register
+POST /api/auth/register
 Content-Type: application/json
 
 {
@@ -56,7 +56,7 @@ Content-Type: application/json
 
 #### Login
 ```
-POST /api/v1/auth/authenticate
+POST /api/auth/authenticate
 Content-Type: application/json
 
 {
@@ -74,7 +74,7 @@ Authorization: Bearer <your_jwt_token>
 
 #### Create Task
 ```
-POST /api/v1/tasks
+POST /api/tasks
 Content-Type: application/json
 
 {
@@ -88,7 +88,7 @@ Content-Type: application/json
 
 #### Get All Tasks (with filtering and pagination)
 ```
-GET /api/v1/tasks?status=TODO&assignee=1&page=0&size=10
+GET /api/tasks?status=TODO&assignee=1&page=0&size=10
 ```
 
 Query Parameters:
@@ -99,12 +99,12 @@ Query Parameters:
 
 #### Get Specific Task
 ```
-GET /api/v1/tasks/{taskId}
+GET /api/tasks/{taskId}
 ```
 
 #### Update Task
 ```
-PUT /api/v1/tasks/{taskId}
+PUT /api/tasks/{taskId}
 Content-Type: application/json
 
 {
@@ -118,39 +118,39 @@ Content-Type: application/json
 
 #### Delete Task
 ```
-DELETE /api/v1/tasks/{taskId}
+DELETE /api/tasks/{taskId}
 ```
 
 #### Assign Task
 ```
-POST /api/v1/tasks/{taskId}/assign?assigneeId=2
+POST /api/tasks/{taskId}/assign?assigneeId=2
 ```
 
 #### Update Task Status
 ```
-PUT /api/v1/tasks/{taskId}/status?status=DONE
+PUT /api/tasks/{taskId}/status?status=DONE
 ```
 
 #### Get My Tasks (tasks assigned to current user)
 ```
-GET /api/v1/tasks/my-tasks
+GET /api/tasks/my-tasks
 ```
 
 #### Get Tasks Created by Me
 ```
-GET /api/v1/tasks/created-by-me
+GET /api/tasks/created-by-me
 ```
 
 #### Get Tasks by Status
 ```
-GET /api/v1/tasks/status/{status}
+GET /api/tasks/status/{status}
 ```
 
 ### User Management Endpoints
 
 #### Get All Users (for task assignment)
 ```
-GET /api/v1/users
+GET /api/users
 ```
 
 ## Status Transitions

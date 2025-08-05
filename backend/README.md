@@ -113,7 +113,7 @@ The system implements a two-tier role system with granular permissions:
 
 #### Register User
 ```http
-POST /api/v1/auth/register
+POST /api/auth/register
 Content-Type: application/json
 
 {
@@ -126,7 +126,7 @@ Content-Type: application/json
 
 #### Login
 ```http
-POST /api/v1/auth/login
+POST /api/auth/login
 Content-Type: application/json
 
 {
@@ -137,13 +137,13 @@ Content-Type: application/json
 
 #### Refresh Token
 ```http
-POST /api/v1/auth/refresh-token
+POST /api/auth/refresh-token
 Authorization: Bearer <refresh_token>
 ```
 
 #### Logout
 ```http
-POST /api/v1/auth/logout
+POST /api/auth/logout
 Authorization: Bearer <access_token>
 ```
 
@@ -151,7 +151,7 @@ Authorization: Bearer <access_token>
 
 #### Create Task
 ```http
-POST /api/v1/tasks
+POST /api/tasks
 Authorization: Bearer <access_token>
 Content-Type: application/json
 
@@ -168,7 +168,7 @@ Content-Type: application/json
 
 #### Get All Tasks (with filtering)
 ```http
-GET /api/v1/tasks?status=IN_PROGRESS&priority=HIGH&assignee=2&page=0&size=10
+GET /api/tasks?status=IN_PROGRESS&priority=HIGH&assignee=2&page=0&size=10
 Authorization: Bearer <access_token>
 ```
 
@@ -178,7 +178,7 @@ Authorization: Bearer <access_token>
 
 #### Get Task by ID
 ```http
-GET /api/v1/tasks/{taskId}
+GET /api/tasks/{taskId}
 Authorization: Bearer <access_token>
 ```
 
@@ -188,7 +188,7 @@ Authorization: Bearer <access_token>
 
 #### Update Task
 ```http
-PUT /api/v1/tasks/{taskId}
+PUT /api/tasks/{taskId}
 Authorization: Bearer <access_token>
 Content-Type: application/json
 
@@ -207,7 +207,7 @@ Content-Type: application/json
 
 #### Delete Task
 ```http
-DELETE /api/v1/tasks/{taskId}
+DELETE /api/tasks/{taskId}
 Authorization: Bearer <access_token>
 ```
 
@@ -215,7 +215,7 @@ Authorization: Bearer <access_token>
 
 #### Assign Task
 ```http
-POST /api/v1/tasks/{taskId}/assign
+POST /api/tasks/{taskId}/assign
 Authorization: Bearer <access_token>
 Content-Type: application/json
 
@@ -230,7 +230,7 @@ Content-Type: application/json
 
 #### Update Task Status
 ```http
-PUT /api/v1/tasks/{taskId}/status
+PUT /api/tasks/{taskId}/status
 Authorization: Bearer <access_token>
 Content-Type: application/json
 
@@ -245,7 +245,7 @@ Content-Type: application/json
 
 #### Get My Tasks
 ```http
-GET /api/v1/tasks/my-tasks
+GET /api/tasks/my-tasks
 Authorization: Bearer <access_token>
 ```
 
@@ -253,7 +253,7 @@ Authorization: Bearer <access_token>
 
 #### Get Tasks Created by Me
 ```http
-GET /api/v1/tasks/created-by-me
+GET /api/tasks/created-by-me
 Authorization: Bearer <access_token>
 ```
 
@@ -261,7 +261,7 @@ Authorization: Bearer <access_token>
 
 #### Get Tasks by Status
 ```http
-GET /api/v1/tasks/status/{status}
+GET /api/tasks/status/{status}
 Authorization: Bearer <access_token>
 ```
 
@@ -271,7 +271,7 @@ Authorization: Bearer <access_token>
 
 #### Get All Users
 ```http
-GET /api/v1/users
+GET /api/users
 Authorization: Bearer <access_token>
 ```
 
@@ -279,7 +279,7 @@ Authorization: Bearer <access_token>
 
 #### Change Password
 ```http
-PATCH /api/v1/users
+PATCH /api/users
 Authorization: Bearer <access_token>
 Content-Type: application/json
 
@@ -295,7 +295,7 @@ Content-Type: application/json
 
 ##### Get My Permissions
 ```http
-GET /api/v1/users/my-permissions
+GET /api/users/my-permissions
 Authorization: Bearer <access_token>
 ```
 
@@ -303,7 +303,7 @@ Returns current user's authorities and authentication details.
 
 ##### Test Authentication
 ```http
-GET /api/v1/users/test-auth
+GET /api/users/test-auth
 Authorization: Bearer <access_token>
 ```
 
