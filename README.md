@@ -44,7 +44,7 @@ This project consists of two main components:
 - Task assignment to users
 - Status tracking (TODO, IN_PROGRESS, COMPLETED)
 - Priority levels (LOW, MEDIUM, HIGH)
-- Advanced filtering and search
+- Advanced filtering
 
 ### User Interface
 - Modern, responsive design
