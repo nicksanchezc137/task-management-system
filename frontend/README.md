@@ -60,7 +60,7 @@ src/
 ## Getting Started
 
 ### Prerequisites
-- Node.js (v18 or higher)
+- Node.js (v20.19.0 or higher)
 - npm or yarn
 
 ### Installation
